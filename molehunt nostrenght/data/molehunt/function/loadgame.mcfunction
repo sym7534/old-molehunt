@@ -28,5 +28,5 @@ scoreboard players set start Molehunt 0
 time set day
 
 
-gamerule announceAdvancements false
-gamerule showDeathMessages false
+gamerule show_advancement_messages false
+gamerule show_death_messages false
