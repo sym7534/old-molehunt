@@ -1,4 +1,4 @@
-function molehunt:load
+function molehunt:loadgame
 function molehunt:choose_roles
 title @a title {"text":"You are...","color":"yellow","bold":true}
 schedule function molehunt:announce_role 3s

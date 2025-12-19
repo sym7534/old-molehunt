@@ -3,8 +3,8 @@ gamemode spectator @a[team=spec]
 execute store result score Moles Alive run team list mole
 execute store result score Innocents Alive run team list inno
 
-execute if score start Molehunt matches 1 if score Moles Alive matches 0 run function molehunt:end
-execute if score start Molehunt matches 1 if score Innocents Alive matches 0 run function molehunt:end
+execute if score start Molehunt matches 1 if score Moles Alive matches 0 run function molehunt:endgame
+execute if score start Molehunt matches 1 if score Innocents Alive matches 0 run function molehunt:endgame
 
 execute if score start Molehunt matches 1 run scoreboard players add ticks Timer 1
 
@@ -30,5 +30,7 @@ execute if score start Molehunt matches 1 run title @a[team=mole] actionbar [{"s
 
 execute if score start Molehunt matches 1 run title @a[team=inno] actionbar [{"score":{"name":"hours2","objective":"Timer"},"color":"green"},{"score":{"name":"hours","objective":"Timer"},"color":"green"},":",{"score":{"name":"minutes2","objective":"Timer"},"color":"green"},{"score":{"name":"minutes","objective":"Timer"},"color":"green"},":",{"score":{"name":"seconds2","objective":"Timer"},"color":"green"},{"score":{"name":"seconds","objective":"Timer"},"color":"green"}]
 
+execute if score start Molehunt matches 1 run title @a[team=spec] actionbar [{"score":{"name":"hours2","objective":"Timer"},"color":"green"},{"score":{"name":"hours","objective":"Timer"},"color":"green"},":",{"score":{"name":"minutes2","objective":"Timer"},"color":"green"},{"score":{"name":"minutes","objective":"Timer"},"color":"green"},":",{"score":{"name":"seconds2","objective":"Timer"},"color":"green"},{"score":{"name":"seconds","objective":"Timer"},"color":"green"}]
+
 execute if score start Molehunt matches 0 run title @a actionbar ""
-execute if score seconds Timer matches 0 if score minutes Timer matches 0 if score hours Timer matches 0 run function molehunt:end
+execute if score seconds Timer matches 0 if score minutes Timer matches 0 if score hours Timer matches 0 run function molehunt:endgame
