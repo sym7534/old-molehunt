@@ -5,6 +5,7 @@ execute store result score Innocents Alive run team list inno
 
 execute if score start Molehunt matches 1 if score Moles Alive matches 0 run function molehunt:endgame
 execute if score start Molehunt matches 1 if score Innocents Alive matches 0 run function molehunt:endgame
+execute if score start Molehunt matches 1 if score Innocents Alive matches 2 run effect give @a[team=mole] minecraft:strength infinite 1 true
 
 execute if score start Molehunt matches 1 run scoreboard players add ticks Timer 1
 
