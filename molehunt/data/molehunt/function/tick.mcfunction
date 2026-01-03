@@ -7,6 +7,7 @@ execute if score start Molehunt matches 1 if score Moles Alive matches 0 run fun
 execute if score start Molehunt matches 1 if score Innocents Alive matches 0 run function molehunt:endgame
 execute if score start Molehunt matches 1 if score Innocents Alive matches 2 run effect give @a[team=mole] minecraft:strength infinite 1 true
 
+
 execute if score start Molehunt matches 1 run scoreboard players add ticks Timer 1
 
 execute if score ticks Timer matches 20.. run scoreboard players remove seconds Timer 1
@@ -28,6 +29,8 @@ execute unless score minutes Timer matches 10.. run scoreboard players set minut
 execute unless score seconds Timer matches 10.. run scoreboard players set seconds2 Timer 0
 
 execute if score start Molehunt matches 1 run title @a[team=mole] actionbar [{"score":{"name":"hours2","objective":"Timer"},"color":"red"},{"score":{"name":"hours","objective":"Timer"},"color":"red"},":",{"score":{"name":"minutes2","objective":"Timer"},"color":"red"},{"score":{"name":"minutes","objective":"Timer"},"color":"red"},":",{"score":{"name":"seconds2","objective":"Timer"},"color":"red"},{"score":{"name":"seconds","objective":"Timer"},"color":"red"}]
+execute if score start Molehunt matches 1 if score Innocents Alive matches 2 run tellraw @a[team=mole] [{"text":"⚡ STRENGTH ACTIVATED ⚡","color":"gold","bold":true}]
+
 
 execute if score start Molehunt matches 1 run title @a[team=inno] actionbar [{"score":{"name":"hours2","objective":"Timer"},"color":"green"},{"score":{"name":"hours","objective":"Timer"},"color":"green"},":",{"score":{"name":"minutes2","objective":"Timer"},"color":"green"},{"score":{"name":"minutes","objective":"Timer"},"color":"green"},":",{"score":{"name":"seconds2","objective":"Timer"},"color":"green"},{"score":{"name":"seconds","objective":"Timer"},"color":"green"}]
 
